@@ -1,0 +1,10 @@
+.vacancies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp-calc(20px, 40px);
+    align-items: flex-start;
+    
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+}

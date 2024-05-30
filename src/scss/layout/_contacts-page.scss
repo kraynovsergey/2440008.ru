@@ -1,0 +1,7 @@
+.contacts-page {
+    & .footer__block-form,
+    & .footer__item {
+        background: $color_white;
+        color: $color_dark_blue;
+    }
+}

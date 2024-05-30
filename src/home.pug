@@ -1,0 +1,90 @@
+extends base
+
+block meta
+    - var seotitle = 'Главная страница'
+    - var seodescription = ''
+    - var seokeywords = ''
+
+block header
+    - var header_classname = '_transparent'
+
+block main
+    main.main
+        section.intro
+            .container.intro__container
+                .intro__content
+                    p.intro__note
+                        span.intro__circle
+                            +sprite('', 18, 18, 'plus')
+                        | Более 1900 вариантов конструкций
+
+                    h1.intro__title.heading Расскажем про <span>вас</span> всему городу
+
+                    p.intro__subtitle Привлекайте внимание и увеличивайте продажи с помощью наружной рекламы.
+
+                    button.btn-reset.btn._light-blue(type="button" data-src="#popup-order" data-fancybox) Запросить предложение
+
+                .intro__img
+                    img(src="@img/intro-img.svg" alt="#" width="900" height="657")
+
+            +sprite('intro__pattern', 454, 535, 'pattern')
+            img.intro__circle-left(src="@img/circle.svg" alt="#" width="968" height="968")
+            img.intro__circle-bottom(src="@img/circle.svg" alt="#" width="635" height="635")
+            img.intro__circle-right(src="@img/circle.svg" alt="#" width="635" height="635")
+
+        section.section
+            .container
+                h2.section__title.heading._center Каталог конструкций
+
+                .categories.scrollbar-hidden
+                    +category('Остановочные павильоны', 'Специализированные конструкции с элементами рекламы и информации, установленные на улицах и предназначенные для ожидания общественного транспорта.', 'category-1.svg')
+                    +category('Билборды', 'Рекламные конструкции размером 3*6, которые размещаются на видных местах и предназначены для привлечения внимания прохожих и автолюбителей.', 'category-2.svg')
+                    +category('Пилоны', 'Отдельностоящие конструкции размером 1,2*1,8м, которые представляет собой короб из оргстекла с металлическим каркасом, используются с целью размещения рекламной либо навигационной информации.', 'category-3.svg')
+                    +category('Афишный стенд', 'Конструкция размером 1,8*1,8м. Предназначенна для размещения афиш и других рекламных материалов', 'category-4.svg')
+                    +category('ХоРеКа', 'Рекламная конструкция в виде отдельностоящей стальной опоры с панель-кронштейнами из коробов, устанавливаемых на высоте 2,5 метров.', 'category-5.svg')
+                    +picture('categories__picture picture _cover', 'category-img', 'jpg', 560, 411, '#')
+
+        section.section.advantages
+            .container
+                h2.section__title.advantages__title.heading._white Преимущество работы <span>с нами</span>
+
+                .advantages__items
+                    +advantage('Опыт и профессионализм', 'Благодаря 14-летнему опыту на рынке наружной рекламы агентство обладает глубокими знаниями и навыками в этой области, что позволяет предлагать клиентам эффективные и инновационные решения.')
+                    +advantage('Широкий охват рекламных конструкций в собственности', 'Наличие 966 рекламных конструкций по Самаре, Тольятти, Новокуйбышевску и Самарской области обеспечивает возможность выбора различных форматов и мест для размещения наружной рекламы, что позволяет адаптировать рекламные кампании под разные целевые аудитории.')
+                    +advantage('Квалифицированный персонал', 'Наличие 40 сотрудников в штате говорит об обширных ресурсах и профессионализме команды агентства, что позволяет обеспечивать высокое качество обслуживания и оперативное выполнение задач.')
+                    +advantage('Техническая поддержка рекламных конструкций', 'Наша команда обеспечивает установку и техническую поддержку рекламных конструкций, чтобы они успешно функционировали. Также мы следим эстетическим содержанием рекламных конструкций: осуществляем ежедневную работу по помывке от граффити и незаконных объявлений.')
+                    +advantage('Мощный клиентский портфель', 'Наличие среди клиентов крупных компаний и предприятий свидетельствует о доверии и успешных сотрудничествах нашего агентства наружной рекламы.')
+
+                    article.advantages__block-form
+                        h3.advantages__block-form-title.heading Запросить предложение
+
+                        //Класс _error у input для полей с ошибкой
+                        form.advantages__form(action="#" method="post" data-policy-form data-open-thankyou)
+                            .advantages__form-items
+                                input.advantages__form-input.form__input(type="text" name="name" placeholder="Имя")
+                                input.advantages__form-input.form__input(type="tel" name="phone" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ" data-tel)
+                                .advantages__form-btn
+                                    button.btn-reset.btn._light-blue(type="submit" data-policy-submit) Отправить заявку
+                            .advantages__form-checkbox.form__checkbox
+                                input(type="checkbox" name="privacy_policy" id="advantage-privacy-policy" checked data-policy)
+                                label(for="advantage-privacy-policy")
+                                    span._check
+                                        +sprite('', 10, 8, 'checkbox')
+                                    span Я ознакомлен с <a href="#" target="_blank">Политикой конфиденциальности</a>, согласен на <a href="#">обработку персональных данных</a> и подтверждаю, что мне исполнилось 18 лет
+
+                        +sprite('advantages__block-form-pattern', 210, 247, 'pattern')
+                        img.advantages__block-form-circle.lazy(data-src="@img/circle.svg" width="261" height="261" alt="#")
+            
+            img.advantages__bg.lazy(data-src="@img/advantages-bg.svg" width="1920" height="1252" alt="#")
+            img.advantages__circle.lazy(data-src="@img/circle-blue.svg" width="466" height="466" alt="#")
+
+        include pug/layout/_for-whats
+
+        include pug/layout/_reviews
+                                
+
+
+
+
+
+

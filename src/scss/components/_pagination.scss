@@ -1,0 +1,35 @@
+.pagination {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: clamp-calc(10px, 15px);
+
+    &__item {
+        min-width: clamp-calc(40px, 60px);
+        max-width: clamp-calc(40px, 60px);
+        aspect-ratio: 1/1;
+        border-radius: clamp-calc(8px, 10px);
+        border: 1px solid $color_border;
+        display: flex;
+        color: $color_border;
+        font-size: clamp-calc(18px, 24px);
+        overflow: hidden;
+        transition: $transition;
+
+        &._current {
+            color: $color_white;
+            background: $color_dark_blue;
+            border-color: $color_dark_blue;
+        }
+    }
+
+    &__link {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: currentColor;
+        text-decoration: none;
+    }
+}

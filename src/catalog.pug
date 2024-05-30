@@ -1,0 +1,132 @@
+extends base
+
+block meta
+    - var seotitle = 'Каталог конструкций (списком)'
+    - var seodescription = ''
+    - var seokeywords = ''
+
+block main
+    main.main._inner
+        .breadcrumbs
+            .container
+                ul.breadcrumbs__list.list-reset
+                    li
+                        a(href="#") Главная
+                    li Каталог конструкций
+
+        section.section._pt0
+            .container
+                h1.heading Каталог конструкций
+
+                .catalog
+                    .filter
+                        button.filter__mobile-btn.btn.btn-reset._light-blue(type="button" data-src="#filter" data-fancybox) Фильтр
+
+                        .filter__content(id="filter")
+                            button.filter__close.btn-reset.popup__close(type="button" data-fancybox-close)
+                                +sprite('', 18, 18, 'close')
+
+                            form.filter__form(action="#" method="post")
+                                fieldset.filter__fieldset
+                                    .filter__label 1981 вариант
+                                    button.filter__reset.btn.btn-reset(type="reset")
+                                        +sprite('', 12, 12, 'close')
+                                        | Очистить фильтр
+
+                                fieldset.filter__fieldset
+                                    .filter__label Показать:
+                                    .filter__templates
+                                        a.filter__template._active(href="#") Списком
+                                        a.filter__template(href="#") Картой
+
+                                fieldset.filter__fieldset
+                                    input.form__input(type="text" name="gid" placeholder="Поиск по GID")
+                                    input.form__input(type="text" name="address" placeholder="Поиск по адресу")
+
+                                fieldset.filter__fieldset
+                                    .filter__label Тип конструкции
+                                    .filter__select-wrap
+                                        select.select(name="cunstruction")
+                                            option(value="Все" selected) Все
+                                            option(value="Тип конструкции") Тип конструкции
+                                            option(value="Тип конструкции") Тип конструкции
+                                            option(value="Тип конструкции") Тип конструкции
+                                            option(value="Тип конструкции") Тип конструкции
+
+                                fieldset.filter__fieldset
+                                    .filter__label Район
+                                    .filter__select-wrap
+                                        select.select(name="district")
+                                            option(value="Все" selected) Все
+                                            option(value="Тип конструкции") Район
+                                            option(value="Тип конструкции") Район
+                                            option(value="Тип конструкции") Район
+                                            option(value="Тип конструкции") Район
+
+                                fieldset.filter__fieldset
+                                    .filter__label Город
+                                    .filter__select-wrap
+                                        select.select(name="district")
+                                            option(value="Все" selected) Все
+                                            option(value="Тип конструкции") Город
+                                            option(value="Тип конструкции") Город
+                                            option(value="Тип конструкции") Город
+                                            option(value="Тип конструкции") Город
+
+
+                                fieldset.filter__fieldset
+                                    .filter__label Формат
+                                    .filter__select-wrap
+                                        select.select(name="district")
+                                            option(value="Все" selected) Все
+                                            option(value="Тип конструкции") Формат
+                                            option(value="Тип конструкции") Формат
+                                            option(value="Тип конструкции") Формат
+                                            option(value="Тип конструкции") Формат
+
+                                fieldset.filter__fieldset
+                                    .filter__label Сторона
+                                    .filter__select-wrap
+                                        select.select(name="district")
+                                            option(value="Все" selected) Все
+                                            option(value="Тип конструкции") Сторона
+                                            option(value="Тип конструкции") Сторона
+                                            option(value="Тип конструкции") Сторона
+                                            option(value="Тип конструкции") Сторона
+
+                                fieldset.filter__fieldset
+                                    input.form__input(type="text" name="description" placeholder="Поиск по описанию")
+
+                                .form__checkbox.filter__checkbox
+                                    input(type="checkbox" name="light" id="filter-light" checked)
+                                    label(for="filter-light")
+                                        span._check
+                                            +sprite('', 12, 9, 'checkbox-weight')
+                                        span С подсветкой
+
+                                button.filter__submit.btn.btn-reset._dark-blue(type="submit") Показать
+
+                    .catalog__content
+                        block catalog_content
+                            .catalog__items
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+                                +product('п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d')
+
+                            ul.pagination.list-reset
+                                li.pagination__item._current
+                                    a.pagination__link(href="#") 1
+                                li.pagination__item
+                                    a.pagination__link(href="#") 2
+                                li.pagination__item
+                                    a.pagination__link(href="#") 3
+                                li.pagination__item
+                                    span.pagination__link ...
+                                li.pagination__item
+                                    a.pagination__link(href="#") 15

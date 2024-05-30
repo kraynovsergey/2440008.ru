@@ -1,0 +1,38 @@
+.for-what {
+    padding: clamp-calc(20px, 40px);
+    border-radius: clamp-calc(20px, 40px);
+    border: 1px solid $color_violet;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp-calc(15px, 20px);
+    counter-increment: for-whats;
+
+    &:last-child {
+        @include tablet {
+            grid-column: span 2;
+        }
+
+        @include mobile {
+            grid-column: span 1 !important;
+        }
+    }
+
+    &__number {
+        color: $color_light_blue;
+        font-size: clamp-calc(20px, 30px);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &::after {
+            content: counter(for-whats, decimal-leading-zero);
+            color: $color_blue;
+        }
+    }
+
+    &__text {
+        line-height: 130%;
+        margin: 0;
+    }
+}

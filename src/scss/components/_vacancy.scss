@@ -1,0 +1,79 @@
+.vacancy {
+    border-radius: 10px;
+    background: $color_white;
+    overflow: hidden;
+
+    &__btn {
+        padding: clamp-calc(20px, 40px) clamp-calc(25px, 50px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        text-align: left;
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: clamp-calc(15px, 20px);
+        }
+
+        &-icon {
+            min-width: clamp-calc(40px, 60px);
+            max-width: clamp-calc(40px, 60px);
+            aspect-ratio: 1/1;
+            border-radius: clamp-calc(5px, 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $color_bg;
+            
+            & svg {
+                width: 40%;
+                height: auto;
+                transform: rotate(-45deg);
+                transition: $transition;
+            }
+        }
+    }
+
+    &__title {
+        font-size: clamp-calc(20px, 26px);
+        font-weight: 500;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp-calc(15px, 30px);
+
+        & h3, p, ul, ol {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        & h3 {
+            font-size: clamp-calc(18px, 22px);
+            font-weight: 500;
+        }
+    }
+
+    &__text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: clamp-calc(20px, 40px);
+        padding: 0 clamp-calc(25px, 50px);
+
+        &::before,
+        &::after {
+            content: '';
+        }
+
+        &::before {
+            width: 100%;
+            border-top: 1px solid #b6ccdb;
+        }
+    }
+}

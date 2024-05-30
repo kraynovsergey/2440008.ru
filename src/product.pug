@@ -1,0 +1,84 @@
+extends base
+
+block meta
+    - var seotitle = 'Щит 3Х6 Самарская область'
+    - var seodescription = ''
+    - var seokeywords = ''
+
+block main
+    main.main._inner
+        .breadcrumbs
+            .container
+                ul.breadcrumbs__list.list-reset
+                    li
+                        a(href="#") Главная
+                    li
+                        a(href="#") Каталог конструкций
+                    li Щит 3Х6 Самарская область
+
+        section.section._pt0
+            .container
+                p.h1.product-page__title.heading._mobile Щит 3Х6 Самарская область
+
+                .product-page__grid
+                    .product-page__gallery
+                        .swiper(data-swiper-product)
+                            .swiper-wrapper
+                                .swiper-slide
+                                    a.product-page__gallery-link(href="@img/product-page@2x.jpg" data-fancybox="product-gallery")
+                                        +picture('product-page__gallery-picture picture _cover', 'product-page', 'jpg', 600, 404, '#')
+                                .swiper-slide
+                                    a.product-page__gallery-link(href="@img/product-page@2x.jpg" data-fancybox="product-gallery")
+                                        +picture('product-page__gallery-picture picture _cover', 'product-page', 'jpg', 600, 404, '#')
+                                .swiper-slide
+                                    a.product-page__gallery-link(href="@img/product-page@2x.jpg" data-fancybox="product-gallery")
+                                        +picture('product-page__gallery-picture picture _cover', 'product-page', 'jpg', 600, 404, '#')
+
+                        .product-page__thumbs
+                            button.btn-reset.product-page__thumb._active(data-item="0" data-swiper-product-thumb)
+                                +picture('picture _cover', 'product-page-thumb', 'jpg', 110, 110, '#')
+                            button.btn-reset.product-page__thumb(data-item="1" data-swiper-product-thumb)
+                                +picture('picture _cover', 'product-page-thumb', 'jpg', 110, 110, '#')
+                            button.btn-reset.product-page__thumb(data-item="2" data-swiper-product-thumb)
+                                +picture('picture _cover', 'product-page-thumb', 'jpg', 110, 110, '#')
+
+                    .product-page__content
+                        h1.heading.product-page__title Щит 3Х6 Самарская область
+
+                        .product-page__sides
+                            a.product-page__side._active(href="#") A
+                            a.product-page__side(href="#") B
+
+                        .product-page__params
+                            dl.product-page__param
+                                dt.product-page__param-item GID
+                                dd.product-page__param-item d
+                            dl.product-page__param
+                                dt.product-page__param-item Сторона
+                                dd.product-page__param-item A
+                            dl.product-page__param
+                                dt.product-page__param-item Тип конструкции
+                                dd.product-page__param-item Щиты 3Х6
+                            dl.product-page__param
+                                dt.product-page__param-item Формат
+                                dd.product-page__param-item 3 X 6 Метр
+                            dl.product-page__param
+                                dt.product-page__param-item Город
+                                dd.product-page__param-item Самарская область
+                            dl.product-page__param
+                                dt.product-page__param-item Район:
+                                dd.product-page__param-item 
+                            dl.product-page__param
+                                dt.product-page__param-item Свет
+                                dd.product-page__param-item Нет
+                            dl.product-page__param
+                                dt.product-page__param-item Описание
+                                dd.product-page__param-item п. Смышляевка, трасса, Вокзальная 39б, авто-кс Заречье (2) d, A, d
+
+                        button.product-page__order.btn.btn-reset._dark-blue(type="button" data-src="#popup-order" data-fancybox) Отправить заявку
+
+        section.section._pt0
+            .container
+                h2.section__title.heading Объект на карте
+
+                .product-page__map(id="product-map" data-placemark-l="53.21881507120586" data-placemark-r="50.15649049999999" data-zoom="17" data-marker="@img/map-placemark.png")

@@ -1,0 +1,43 @@
+.category {
+    border-radius: clamp-calc(20px, 40px);
+    overflow: hidden;
+    position: relative;
+    background: $color_white;
+    padding: clamp-calc(20px, 40px) clamp-calc(20px, 40px) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    transition: $transition;
+
+    &:hover {
+        @include hover {
+            transform: translateY(-10px);
+        }
+    }
+
+    &__title {
+        font-size: clamp-calc(20px, 30px);
+        color: $color_blue;
+
+        & a {
+            color: currentColor;
+            text-decoration: none;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        font-size: clamp-calc(14px, 16px);
+        color: $color_violet;
+        flex-grow: 1;
+        line-height: 140%;
+    }
+
+    &__img {
+        width: auto;
+        max-width: 100%;
+        height: clamp-calc(140px, 200px);
+    }
+}

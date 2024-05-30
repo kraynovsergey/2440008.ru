@@ -1,0 +1,53 @@
+.advantage {
+    padding: clamp-calc(20px, 40px);
+    background: $color_white;
+    border-radius: clamp-calc(20px, 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    counter-increment: advantage;
+
+    &:nth-child(2n) {
+        &::before {
+            background: $color_light_blue;
+        }
+    }
+
+    &:nth-last-child(2) {
+        @include desktop-small {
+            grid-column: span 2;
+        }
+
+        @include mobile {
+            grid-column: span 1;
+        }
+    }
+
+    &::before {
+        content: counter(advantage);
+        min-width: clamp-calc(40px, 60px);
+        max-width: clamp-calc(40px, 60px);
+        aspect-ratio: 1/1;
+        background: $color_violet;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp-calc(20px, 24px);
+        font-weight: 500;
+        color: $color_white;
+        margin-bottom: clamp-calc(20px, 30px);
+    }
+
+    &__title {
+        color: $color_violet;
+        font-size: clamp-calc(20px, 24px);
+        margin-bottom: clamp-calc(15px, 20px);
+    }
+
+    &__text {
+        font-size: clamp-calc(14px, 16px);
+        margin: 0;
+        line-height: 130%;
+    }
+}

@@ -1,0 +1,28 @@
+.social {
+    min-width: clamp-calc(25px, 30px);
+    max-width: clamp-calc(25px, 30px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: $color_white;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &._whatsapp {
+        background: #36D88A;
+    }
+
+    &._telegram {
+        background: #38A6EF;
+
+        & svg {
+            transform: translateX(-8%);
+        }
+    }
+
+    & svg {
+        width: 55%;
+        height: auto;
+    }
+}

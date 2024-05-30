@@ -1,0 +1,10 @@
+import "./modules/lazy.js";
+import "./modules/header.js";
+import "./modules/toggle.js";
+import "./modules/form.js";
+import "./modules/swiper.js";
+import "./modules/fancybox.js";
+import "./modules/maps.js";
+import "./modules/cookies.js";
+import "./modules/select.js";
+import "./modules/accordion.js";

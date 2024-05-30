@@ -1,0 +1,69 @@
+extends base
+
+block meta
+    - var seotitle = 'Вакансии'
+    - var seodescription = ''
+    - var seokeywords = ''
+
+block main
+    main.main._inner
+        .breadcrumbs
+            .container
+                ul.breadcrumbs__list.list-reset
+                    li
+                        a(href="#") Главная
+                    li Вакансии
+
+        section.section._pt0
+            .container
+                h1.heading Вакансии
+
+                .vacancies(data-accordion-vacancies)
+                    .vacancy.ac
+                        button.vacancy__btn.btn-reset.ac-trigger(type="button")
+                            span.vacancy__btn-content
+                                span.vacancy__title Название вакансии
+                                span.vacancy__subtitle График работы, зарплата 
+
+                            span.vacancy__btn-icon
+                                +sprite('', 30, 30, 'close')
+
+                        .vacancy__text-wrap.ac-panel
+                            .vacancy__text
+                                h3 Требования
+                                p — Значимость этих проблем настолько очевидна, что укрепление и развитие внутренней структуры говорит о возможностях соответствующих условий активизации
+                                p — Значимость этих проблем настолько очевидна, что укрепление и развитие внутренней структуры говорит о возможностях соответствующих условий активизации
+                                button.btn.btn-reset._dark-blue(type="button" data-src="#popup-order" data-fancybox) Отправить заявку
+
+                    .vacancy.ac
+                        button.vacancy__btn.btn-reset.ac-trigger(type="button")
+                            span.vacancy__btn-content
+                                span.vacancy__title Название вакансии
+                                span.vacancy__subtitle График работы, зарплата 
+
+                            span.vacancy__btn-icon
+                                +sprite('', 30, 30, 'close')
+
+                        .vacancy__text-wrap.ac-panel
+                            .vacancy__text
+                                h3 Требования
+                                p — Значимость этих проблем настолько очевидна, что укрепление и развитие внутренней структуры говорит о возможностях соответствующих условий активизации
+                                p — Значимость этих проблем настолько очевидна, что укрепление и развитие внутренней структуры говорит о возможностях соответствующих условий активизации
+                                button.btn.btn-reset._dark-blue(type="button" data-src="#popup-order" data-fancybox) Отправить заявку
+
+                    .vacancy.ac
+                        button.vacancy__btn.btn-reset.ac-trigger(type="button")
+                            span.vacancy__btn-content
+                                span.vacancy__title Название вакансии
+                                span.vacancy__subtitle График работы, зарплата 
+
+                            span.vacancy__btn-icon
+                                +sprite('', 30, 30, 'close')
+
+                        .vacancy__text-wrap.ac-panel
+                            .vacancy__text
+                                h3 Требования
+                                p — Значимость этих проблем настолько очевидна, что укрепление и развитие внутренней структуры говорит о возможностях соответствующих условий активизации
+                                p — Значимость этих проблем настолько очевидна, что укрепление и развитие внутренней структуры говорит о возможностях соответствующих условий активизации
+                                button.btn.btn-reset._dark-blue(type="button" data-src="#popup-order" data-fancybox) Отправить заявку
+                        

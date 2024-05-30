@@ -1,0 +1,53 @@
+.popup {
+    display: none;
+    padding: 0;
+    background: none;
+    width: 100%;
+    max-width: 560px;
+    color: $color_dark_blue;
+    position: relative;
+
+    & .is-close-btn {
+        display: none;
+    }
+
+    &__content {
+        border-radius: clamp-calc(15px, 30px);
+        background: $color_white;
+        overflow: hidden;
+        padding: 50px clamp-calc(20px, 55px);
+    }
+
+    &__close {
+        width: 30px;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: clamp-calc(10px, 20px);
+        right: clamp-calc(10px, 20px);
+
+        & svg {
+            width: 60%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: clamp-calc(22px, 30px);
+        text-align: center;
+        margin: 0 0 clamp-calc(20px, 30px);
+        padding: 0;
+    }
+
+    &__text {
+        text-align: center;
+        margin: 0 0 clamp-calc(20px, 30px);
+    }
+
+    &__btn {
+        width: 100%;
+    }
+}

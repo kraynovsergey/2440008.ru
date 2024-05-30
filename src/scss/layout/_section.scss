@@ -1,0 +1,38 @@
+.section {
+    padding: clamp-calc(50px, 100px) 0;
+
+    &._p0 {
+        padding: 0;
+    }
+
+    &._pt0 {
+        padding-top: 0;
+    }
+
+    &._pb0 {
+        padding-bottom: 0;
+    }
+
+    &._white {
+        background: $color_white;
+    }
+
+    &._radius {
+        border-radius: clamp-calc(20px, 40px);
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: clamp-calc(30px, 60px);
+        margin-bottom: clamp-calc(30px, 50px);
+        color: $color_dark_blue;
+
+        &._center {
+            text-align: center;
+        }
+
+        &._white {
+            color: $color_white;
+        }
+    }
+}

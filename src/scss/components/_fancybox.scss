@@ -1,0 +1,19 @@
+body.hide-scrollbar {
+    & .header {
+        width: calc(100% - var(--fancybox-scrollbar-compensate,0px));
+    }
+}
+
+.fancybox {
+    &__backdrop {
+        background: rgba(41, 45, 98, 0.4);
+    }
+
+    &__slide {
+        padding: 0 !important;
+
+        @include tablet {
+            overflow-x: hidden;
+        }
+    }
+}

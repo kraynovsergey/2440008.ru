@@ -1,0 +1,12 @@
+body {
+	font-family: $font_family;
+  	font-weight: normal;
+  	font-style: normal;
+	font-optical-sizing: auto;
+	font-size: clamp-calc(14px, 18px);
+	color: $color_dark_blue;
+	text-align: left;
+	background-color: $color_bg;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}

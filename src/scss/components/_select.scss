@@ -1,0 +1,33 @@
+.nice-select {
+    width: 100%;
+    border-color: $color_border !important;
+    color: $color_dark_blue;
+    height: clamp-calc(40px, 60px);
+    padding: 0 clamp-calc(20px, 35px);
+    border-radius: clamp-calc(50px, 100px);
+    font-size: clamp-calc(14px, 18px);
+    line-height: clamp-calc(40px, 60px);
+
+    &::after {
+        border-bottom: 2px solid $color_dark_blue;
+        border-right: 2px solid $color_dark_blue;
+        width: 8px;
+        height: 8px;
+        right: clamp-calc(20px, 30px);
+        margin-top: -5px;
+    }
+
+    & .nice-select-dropdown {
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid $color_border;
+    }
+
+    & .option.selected {
+        font-weight: 500;
+    }
+
+    & .list {
+        margin: 0;
+    }
+}

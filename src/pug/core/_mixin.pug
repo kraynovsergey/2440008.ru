@@ -1,0 +1,37 @@
+mixin sprite(classname, width, height, id)
+    svg(class=classname width=width height=height)
+        use(xlink:href="@img/icons/icons.svg#"+id)
+
+mixin picture(classname, img, format, width, height, alt, aos)
+    picture(class=classname data-aos=aos)
+        source(type="image/webp" data-srcset="@img/"+img+".webp 1x, @img/"+img+"@2x.webp 2x")
+        img.lazy(data-srcset="@img/"+img+"."+format+" 1x, @img/"+img+"@2x."+format+" 2x" alt=alt width=width height=height)
+
+mixin picture_no_lazy(classname, img, format, width, height, alt, aos)
+    picture(class=classname data-aos=aos)
+        source(type="image/webp" srcset="@img/"+img+".webp 1x, @img/"+img+"@2x.webp 2x")
+        img(srcset="@img/"+img+"."+format+" 1x, @img/"+img+"@2x."+format+" 2x" alt=alt width=width height=height)
+
+mixin category(title, text, img)
+    article.category
+        h3.category__title.heading
+            a.link._full(href="#")=title
+        p.category__text=text
+        img.category__img.lazy(data-src="@img/"+img alt=title width="268" height="200")
+
+mixin advantage(title, text)
+    article.advantage
+        h3.advantage__title.heading=title
+        p.advantage__text=text
+
+mixin for-what(text)
+    .for-what
+        .for-what__number.heading //
+        p.for-what__text=text
+
+mixin product(title)
+    aricle.product
+        +picture('product__picture picture _cover', 'product', 'jpg', 410, 244, title)
+        .product__content
+            h3.product__title=title
+            a.product__more.btn.btn-reset._bordered.link._full(href="#") Подробнее

@@ -1,0 +1,82 @@
+.btn-reset {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    appearance: none;
+    font-weight: normal;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn {
+    height: clamp-calc(40px, 60px);
+    border-radius: clamp-calc(80px, 100px);
+    padding: 0 clamp-calc(15px, 30px);
+    color: $color_white;
+    transition: $transition;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    &:disabled {
+        opacity: .3;
+        cursor: not-allowed;
+    }
+
+    &._light-blue {
+        background: $color_light_blue;
+        
+        &:not(:disabled) {
+            &:hover {
+                @include hover {
+                    background: $color_dark_blue;        
+                }
+            }
+        }
+    }
+
+    &._dark-blue {
+        background: $color_dark_blue;
+
+        &:not(:disabled) {
+            &:hover {
+                @include hover {
+                    background: $color_light_blue;
+                }
+            }
+        }
+    }
+
+    &._white {
+        background: $color_white;
+        color: $color_dark_blue;
+
+        &:not(:disabled) {
+            &:hover {
+                @include hover {
+                    background: $color_light_blue;
+                    color: $color_white;
+                }
+            }
+        }
+    }
+
+    &._bordered {
+        border: 1px solid $color_border;
+        color: $color_dark_blue;
+
+        &:not(:disabled) {
+            &:hover {
+                @include hover {
+                    background: $color_border;
+                    color: $color_white;
+                }
+            }
+        }
+    }
+}

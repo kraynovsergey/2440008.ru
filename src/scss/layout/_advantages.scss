@@ -1,0 +1,161 @@
+.advantages {
+    position: relative;
+    padding-top: 45px;
+
+    &::before {
+        @include tablet-from {
+            content: '';
+            width: 100%;
+            border-radius: 0 0 clamp-calc(20px, 40px);
+            background: $color_dark_blue;
+            height: 50%;
+            bottom: 0;
+            position: absolute;
+        }
+    }
+
+    @include tablet {
+        background: $color_dark_blue;
+        border-radius: clamp-calc(20px, 40px);
+        overflow: hidden;
+    }
+
+    & .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: 1;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__circle {
+        width: clamp-calc(400px, 466px);
+        height: auto;
+        top: 30%;
+        left: -10%;
+        position: absolute;
+        z-index: 2;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__title {
+        line-height: 130%;
+
+        & span {
+            display: block;
+            color: $color_light_blue;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp-calc(20px, 40px);
+        counter-reset: advantages;
+
+        @include desktop-small {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    &__block-form {
+        grid-column: span 3;
+        padding: clamp-calc(20px, 56px) clamp-calc(20px, 84px);
+        background: #2e316f;
+        border-radius: clamp-calc(20px, 40px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        @include tablet {
+            grid-column: span 2;
+        }
+
+        @include mobile {
+            grid-column: span 1 !important;
+        }
+
+        &-title {
+            color: $color_white;
+            margin-bottom: clamp-calc(20px, 40px);
+            font-size: clamp-calc(30px, 60px);
+            position: relative;
+            z-index: 3;
+        }
+
+        &-pattern {
+            position: absolute;
+            z-index: 1;
+            right: -2%;
+            width: clamp-calc(150px, 210px);
+            height: auto;
+            color: #2E3399;
+        }
+
+        &-circle {
+            position: absolute;
+            z-index: 2;
+            width: clamp-calc(400px, 560px);
+            height: auto;
+            position: absolute;
+            right: 5%;
+            top: calc(clamp-calc(200px, 250px) * -1);
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: clamp-calc(20px, 35px);
+        position: relative;
+        z-index: 3;
+
+        &-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            @include tablet-small {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &-input {
+            border-color: transparent;
+        }
+
+        &-checkbox {
+            color: $color_white;
+        }
+
+        &-btn {
+            & button {
+                @include mobile {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

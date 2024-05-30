@@ -1,0 +1,55 @@
+/* CORE */
+@import "core/_variables";
+@import "core/_clamp";
+@import "core/_breakpoints";
+@import "core/_normalize";
+@import "core/_default";
+@import "core/_grid";
+
+/* VENDOR */
+@import "vendors/swiper-bundle.min.scss";
+@import "vendors/fancybox.scss";
+@import "vendors/nice-select2.scss";
+
+/* COMPONENTS */
+@import "components/_btn";
+@import "components/_gap";
+@import "components/_link";
+@import "components/_picture";
+@import "components/_scroll";
+@import "components/_list";
+@import "components/_text";
+@import "components/_accordion";
+@import "components/_swiper";
+@import "components/_form";
+@import "components/_fancybox";
+@import "components/_popup";
+@import "components/_social";
+@import "components/_category";
+@import "components/_advantage";
+@import "components/_for-what";
+@import "components/_blockquote";
+@import "components/_review";
+@import "components/_cookies";
+@import "components/_breadcrumbs";
+@import "components/_select";
+@import "components/_product";
+@import "components/_pagination";
+@import "components/_vacancy";
+
+/* LAYOUT */
+@import "layout/_header";
+@import "layout/_section";
+@import "layout/_intro";
+@import "layout/_categories";
+@import "layout/_advantages";
+@import "layout/_for-whats";
+@import "layout/_reviews";
+@import "layout/_footer";
+@import "layout/_main";
+@import "layout/_catalog";
+@import "layout/_filter";
+@import "layout/_product-page";
+@import "layout/_vacancies";
+@import "layout/_reviews-page";
+@import "layout/_contacts-page";

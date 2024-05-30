@@ -1,0 +1,38 @@
+extends base
+
+block meta
+    - var seotitle = 'О компани'
+    - var seodescription = ''
+    - var seokeywords = ''
+
+block header
+    - var header_classname = '_transparent'
+
+block main
+    main.main
+        section.intro
+            .container.intro__container
+                .intro__content
+                    ul.breadcrumbs__list.list-reset
+                        li
+                            a(href="#") Главная
+                        li О компании
+
+                    h1.intro__title._small.heading Агентство наружной рекламы “Революция Рекламы”
+
+                    .intro__text
+                        p Наша миссия - предоставлять клиентам высококачественные решения в области наружной рекламы, которые способствуют успешному продвижению их брендов и продуктов, а также увеличению прибыли.
+                        p Нашей целью является удовлетворение потребностей клиентов, обеспечение взаимовыгодного партнерства и создание уникальных и запоминающихся рекламных кампаний.
+                        p Мы тщательно анализируем рынок и конкурентов, чтобы предложить нашим клиентам инновационные и индивидуальные решения, которые соответствуют их бизнес-целям и помогают улучшить их результаты.
+
+                .intro__img
+                    img(src="@img/intro-img.svg" alt="#" width="900" height="657")
+
+            +sprite('intro__pattern', 454, 535, 'pattern')
+            img.intro__circle-left(src="@img/circle.svg" alt="#" width="968" height="968")
+            img.intro__circle-bottom(src="@img/circle.svg" alt="#" width="635" height="635")
+            img.intro__circle-right(src="@img/circle.svg" alt="#" width="635" height="635")
+
+        include pug/layout/_for-whats
+
+        include pug/layout/_reviews

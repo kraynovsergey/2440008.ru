@@ -1,0 +1,18 @@
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp-calc(30px, 40px);
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr !important;
+    }
+
+    &__picture {
+        border-radius: clamp-calc(20px, 40px);
+        overflow: hidden;
+    }
+}

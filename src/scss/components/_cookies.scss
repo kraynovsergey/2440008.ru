@@ -1,0 +1,51 @@
+.cookies {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    padding: clamp-calc(20px, 26px) 0;
+    background: $color_white;
+    transition: $transition;
+    bottom: -100%;
+
+    &._active {
+        bottom: 0;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp-calc(20px, 100px);
+        max-width: 1140px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__text {
+        font-size: clamp-calc(14px, 16px);
+        line-height: 130%;
+
+        & a {
+            color: currentColor;
+            text-decoration: underline;
+
+            &:hover {
+                @include tablet-from {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

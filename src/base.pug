@@ -1,0 +1,195 @@
+doctype html
+html(lang="ru")
+    head
+        block meta
+            - var seotitle = ''
+            - var seodescription = ''
+            - var seokeywords = ''
+
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(name="format-detection" content="telephone=no")
+        link(rel="preload" href="css/style.min.css" as="style" fetchpriority="high")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        title= seotitle
+        meta(name="description" content= seodescription)
+        meta(name="keywords" content= seokeywords)
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400..500&family=Oswald:wght@500&display=swap")
+        link(rel="stylesheet" href="css/style.min.css")
+        script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript")
+        script(defer src="js/app.min.js")
+
+    body
+        include pug/core/_mixin
+
+        block header
+            - var header_classname = ''
+
+        block header_content
+            header.header(class= header_classname data-header)
+                .container.header__container
+                    .header__block._logo
+                        a.header__logo(href="#")
+                            img.header__logo-icon(src="@img/logo.svg" width="34" height="40" alt="#")
+                            +sprite('header__logo-text', 113, 40, 'logo')
+
+                    .header__mobile.scrollbar-hidden(data-mobile-nav)
+                        button.header__mobile-close.btn-reset(type="button" data-toggle-target="[data-mobile-nav]")
+                            +sprite('', 18, 18, 'close')
+                        nav.header__block._nav
+                            ul.header__nav.list-reset
+                                li.header__nav-item
+                                    a.header__nav-link(href="#") Каталог конструкций
+                                li.header__nav-item
+                                    button.btn-reset.header__nav-link(type="button" data-toggle) О нас
+                                        +sprite('header__nav-link-arrow', 13, 6, 'arrow-nav')
+                                    .header__subnav
+                                        ul.list-reset.header__subnav-list
+                                            li.header__subnav-item
+                                                a.header__subnav-link(href="#") О компании
+                                            li.header__subnav-item
+                                                a.header__subnav-link(href="#") Вакансии
+                                            li.header__subnav-item
+                                                a.header__subnav-link(href="#") Отзывы
+                                li.header__nav-item
+                                    a.header__nav-link(href="#") Контакты
+
+                        .header__phones.header__block._phones
+                            +sprite('header__phones-icon', 22, 22, 'phone')
+                            .header__phones-list
+                                a.header__phone(href="tel:+78462440008") +7 (846) 244-00-08
+                                a.header__phone(href="tel:+79878195555") +7 (987) 819-55-55
+
+                        .header__block.header__controls
+                            .header__socials
+                                a.header__social.social._whatsapp(href="https://wa.me/79998887766" target="_blank" rel="nofollow")
+                                    +sprite('', 25, 25, 'whatsapp')
+                                a.header__social.social._telegram(href="https://t.me/telegram_nickname" target="_blank" rel="nofollow")
+                                    +sprite('', 23, 21, 'telegram')
+
+                            button.btn-reset.btn.header__btn(type="button" data-src="#popup-order" data-fancybox) Отправить заявку
+
+                    button.btn-reset.header__burger(type="button" data-toggle-target="[data-mobile-nav]")
+
+        block main
+
+        block footer
+            footer.footer.section._pb0
+                .container.footer__container.gap
+                    .footer__top.gap
+                        .footer__block-form
+                            h3.footer__block-form-title.heading Оставьте заявку и <span>получите скидку 15%</span> на первое размещение рекламы
+                            //Класс _error у input для поля с ошибкой
+                            form.footer__form.form(action="#" method="post" data-policy-form data-open-thankyou)
+                                input.form__input._transparent-border(type="text" name="name" placeholder="Имя")
+                                input.form__input._transparent-border(type="tel" name="phone" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ")
+                                button.btn-reset.btn._light-blue(type="submit" data-policy-submit) Отправить заявку
+                                .form__checkbox
+                                    input(type="checkbox" name="privacy_policy" id="footer-privacy-policy" checked data-policy)
+                                    label(for="footer-privacy-policy")
+                                        span._check
+                                            +sprite('', 10, 8, 'checkbox')
+                                        span Я ознакомлен с <a href="#" target="_blank">Политикой конфиденциальности</a>, согласен на <a href="#">обработку персональных данных</a> и подтверждаю, что мне исполнилось 18 лет
+
+                        .footer__map(id="footer-map" data-placemark-l="53.21881507120586" data-placemark-r="50.15649049999999" data-zoom="13" data-marker="@img/map-placemark.png")
+
+                    .footer__items.gap
+                        article.footer__item
+                            h3.footer__title.heading Контакты
+
+                            .footer__block
+                                h4.footer__block-title Телефон
+                                .footer__block-value <a href="tel:+78462440008">+7 (846) 244-00-08</a>, <a href="tel:+78462052202">+7 (846) 205-22-02</a> (Самара)
+                                .footer__block-value <a href="tel:+79878195555">+7 (987) 819-55-55</a> (Тольятти)
+
+                            .footer__block
+                                h4.footer__block-title Почта
+                                .footer__block-value <a href="mailto:2440008@mail.ru">2440008@mail.ru</a>
+
+                        article.footer__item
+                            h3.footer__title.heading Адрес
+
+                            .footer__block
+                                h4.footer__block-title Самара
+                                .footer__block-value Ново-Садовая ул., 161А
+
+                            .footer__block
+                                h4.footer__block-title Время работы
+                                .footer__block-value С 09:00 до 18:00
+
+                            img.footer__item-pattern.lazy(data-src="@img/footer-pattern.svg" alt="#" width="210" height="247")
+
+                        article.footer__item
+                            h3.footer__title.heading Соц. сети и мессенджеры
+
+                            .footer__socials
+                                a.footer__social(href="https://t.me/telegram_nickname" target="_blank" rel="nofollow")
+                                    .social._telegram
+                                        +sprite('', 23, 21, 'telegram')
+                                    | Telegram
+
+                                a.footer__social(href="https://wa.me/79998887766" target="_blank" rel="nofollow")
+                                    .social._whatsapp
+                                        +sprite('', 25, 25, 'whatsapp')
+                                    | WhatsApp
+
+                            img.footer__item-circle.lazy(data-src="@img/circle-blue.svg" alt="#" width="450" height="450")
+
+                    .footer__bottom
+                        .footer__copyright © Революция рекламы, 2024
+
+                        a.footer__development(href="https://tehotdel.ru/" target="_blank" rel="nofollow")
+                            +sprite('', 117, 13, 'development')
+                            | —  разработкa и продвижение сайтов
+
+                img.footer__circle.lazy._top(data-src="@img/circle-blue.svg" alt="#" width="466" height="466")
+                img.footer__circle.lazy._right(data-src="@img/circle-blue.svg" alt="#" width="466" height="466")
+
+        .popup(id="popup-order")
+            .popup__content
+                button.btn-reset.popup__close(type="button" data-fancybox-close)
+                    +sprite('', 18, 18, 'close')
+
+                h3.popup__title Отправить заявку
+
+                //Класс _error у input для поля с ошибкой
+                form.footer__form.form(action="#" method="post" data-policy-form data-open-thankyou)
+                    input.form__input(type="text" name="name" placeholder="Имя")
+
+                    input.form__input(type="tel" name="phone" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ")
+
+                    textarea.form__textarea(name="message" placeholder="Дополнительная информация")
+
+                    button.btn-reset.btn._light-blue(type="submit" data-policy-submit) Оставить заявку
+
+                    .form__checkbox
+                        input(type="checkbox" name="privacy_policy" id="order-privacy-policy" checked data-policy)
+                        label(for="order-privacy-policy")
+                            span._check
+                                +sprite('', 10, 8, 'checkbox')
+                            span Я ознакомлен с <a href="#" target="_blank">Политикой конфиденциальности</a>, согласен на <a href="#">обработку персональных данных</a> и подтверждаю, что мне исполнилось 18 лет
+
+                    .form__note *Обязательно для заполнения
+
+        .popup(id="popup-thankyou")
+            .popup__content
+                button.btn-reset.popup__close(type="button" data-fancybox-close)
+                    +sprite('', 18, 18, 'close')
+
+                h3.popup__title Заявка принята
+
+                p.popup__text Менеджер свяжется с вами в течении 15 минут
+
+                button.btn-reset.btn.popup__btn._light-blue(type="button" data-fancybox-close) Хорошо, спасибо
+
+        .cookies(data-cookie)
+            .container
+                .cookies__container
+                    .cookies__text Мы используем cookies на нашем сайте, чтобы сделать его удобнее для Вас. Продолжая его использовать, Вы подтверждаете своё согласие на <a href="#" target="_blank">обработку персональных данных</a> в соответствии с <a href="#" target="_blank">политикой конфиденциальности</a>.
+                    button.cookies__btn.btn.btn-reset._dark-blue(type="button" data-cookie-approve) Соглашаюсь
+                        img(src="@img/cookie.svg" alt="#" width="20" height="20")
+
+            
+
+

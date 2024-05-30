@@ -1,0 +1,107 @@
+.filter {
+    &__mobile-btn {
+        display: none;
+
+        @include tablet {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        padding: clamp-calc(20px, 40px) clamp-calc(20px, 50px);
+        border-radius: clamp-calc(20px, 40px);
+        background: $color_white;
+        position: relative;
+
+        @include tablet {
+            display: none;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        & .is-close-btn {
+            display: none;
+        }
+    }
+
+    &__close {
+        @include tablet-from {
+            display: none;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp-calc(20px, 30px);
+    }
+
+    &__fieldset {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp-calc(15px, 20px);
+        width: 100%;
+    }
+
+    &__label {
+        font-weight: 500;
+    }
+
+    &__checkbox {
+        font-weight: 500;
+
+        & label {
+            & span._check {
+                border-width: 2px !important;
+                min-width: 20px;
+                max-width: 20px;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    &__reset {
+        border: 1px dotted currentColor;
+        color: $color_border;
+        font-weight: 400;
+        gap: clamp-calc(10px, 15px);
+
+        &:hover {
+            @include tablet-from {
+                background: $color_border;
+                color: $color_white;
+            }
+        }
+    }
+
+    &__templates {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__template {
+        text-decoration: none;
+        height: clamp-calc(30px, 40px);
+        border-radius: 100px;
+        border: 1px solid $color_border;
+        color: $color_dark_blue;
+        padding: 0 clamp-calc(20px, 25px);
+        display: flex;
+        align-items: center;
+        transition: $transition;
+
+        &._active {
+            background: $color_dark_blue;
+            color: $color_white;
+            border-color: $color_dark_blue;
+        }
+    }
+
+    &__select-wrap {
+        width: 100%;
+    }
+}

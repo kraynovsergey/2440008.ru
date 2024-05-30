@@ -1,0 +1,5 @@
+.main {
+    &._inner {
+        padding-top: calc(clamp-calc(30px, 40px) + 24px + clamp-calc(20px, 40px));
+    }
+}

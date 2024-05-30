@@ -1,0 +1,213 @@
+.footer {
+    background: #101022;
+    border-radius: clamp-calc(20px, 40px) clamp-calc(20px, 40px) 0 0;
+    position: relative;
+    overflow: hidden;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__circle {
+        position: absolute;
+        z-index: 1;
+        width: clamp-calc(300px, 466px);
+        height: auto;
+
+        &._top {
+            left: calc(50% - clamp-calc(150px, 233px));
+            top: -15%;
+        }
+
+        &._right {
+            right: calc(clamp-calc(150px, 233px) * -1);
+            top: 20%;
+        }
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__block-form {
+        border-radius: clamp-calc(20px, 40px);
+        background: $color_bg;
+        padding: clamp-calc(20px, 50px) clamp-calc(20px, 80px);
+
+        &-title {
+            font-size: clamp-calc(20px, 36px);
+            margin-bottom: 20px;
+
+            & span {
+                color: $color_light_blue;
+            }
+        }
+    }
+
+    &__map {
+        border-radius: clamp-calc(20px, 40px);
+        overflow: hidden;
+        
+        @include tablet {
+            height: clamp-calc(300px, 500px);
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include tablet-small {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        padding: clamp-calc(20px, 45px) clamp-calc(20px, 55px);
+        border-radius: clamp-calc(20px, 40px);
+        background: $color_dark_blue;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: clamp-calc(20px, 30px);
+        color: $color_white;
+        font-weight: 500;
+        position: relative;
+
+        &:last-child {
+            @include tablet {
+                grid-column: span 2;
+            }
+
+            @include tablet-small {
+                grid-column: span 1;
+            }
+        }
+
+        &-pattern,
+        &-circle {
+            height: auto;
+            position: absolute;
+            z-index: 1;
+        }
+
+        &-pattern {
+            width: clamp-calc(150px, 210px);
+            right: 0;
+            bottom: 15%;
+        }
+
+        &-circle {
+            width: clamp-calc(350px, 450px);
+            right: -25%;
+            bottom: -35%;
+        }
+    }
+
+    &__title {
+        font-size: clamp-calc(22px, 30px);
+        position: relative;
+        z-index: 2;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp-calc(10px, 15px);
+        position: relative;
+        z-index: 2;
+
+        &-title {
+            color: $color_light_blue;
+            margin: 0;
+            padding: 0;
+        }
+
+        &-value {
+            line-height: 130%;
+
+            & a {
+                color: currentColor;
+                text-decoration: none;
+                white-space: nowrap;
+
+                &:hover {
+                    @include tablet-from {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp-calc(15px, 20px);
+        position: relative;
+        z-index: 2;
+    }
+
+    &__social {
+        color: currentColor;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: clamp-calc(15px, 20px);
+
+        &:hover {
+            @include tablet-from {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__bottom {
+        padding-bottom: clamp-calc(20px, 40px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $color_white;
+
+        @include tablet-small {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    &__copyright {
+        font-weight: 500;
+    }
+
+    &__development {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        color: currentColor;
+        text-decoration: none;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        & svg {
+            transform: translateY(3px);
+        }
+    }
+}
