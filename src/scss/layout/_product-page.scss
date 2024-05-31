@@ -88,7 +88,7 @@
         justify-content: space-between;
         margin: 0;
         position: relative;
-        gap: 30px;
+        gap: clamp-calc(15px, 30px);
 
         &::after {
             content: '';
@@ -112,6 +112,7 @@
             &:last-child {
                 padding-left: 12px;
                 text-align: right;
+                margin-left: 0;
             }
         }
     }

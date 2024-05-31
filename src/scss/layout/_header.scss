@@ -223,6 +223,8 @@
         }
 
         &-item {
+            color: $color_dark_blue;
+            
             &:hover {
                 color: $color_light_blue;
             }

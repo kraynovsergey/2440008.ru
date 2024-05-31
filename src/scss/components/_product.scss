@@ -36,9 +36,11 @@
         max-width: 100%;
 
         &:hover {
-            color: $color_white !important;
-            background: $color_dark_blue !important;
-            border-color: $color_dark_blue;
+            @include tablet-from {
+                color: $color_white !important;
+                background: $color_dark_blue !important;
+                border-color: $color_dark_blue;
+            }
         }
     }
 }
