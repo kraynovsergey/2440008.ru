@@ -65,7 +65,7 @@
         }
 
         & .social {
-            @include tablet-small-from {
+            @include desktop-small-from {
                 background: #38A6EF !important;
             }
         }
@@ -89,7 +89,9 @@
         }
 
         &._nav {
-            flex-grow: 1;
+            @include desktop-small-from {
+                flex-grow: 1;
+            }
         }
 
         &._phones {
@@ -237,10 +239,6 @@
                     color: $color_light_blue;
                 }
             }
-
-            @include desktop-small {
-                color: $color_border;
-            }
         }
 
         &-link {
@@ -344,9 +342,10 @@
             color: $color_dark_blue;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: space-between;
+            //justify-content: space-between;
             gap: 30px;
             overscroll-behavior: none;
+            font-size: 16px;
 
             &._active {
                 right: 0;

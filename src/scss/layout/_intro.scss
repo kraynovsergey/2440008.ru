@@ -125,10 +125,6 @@
         width: 100%;
         max-width: 600px;
         line-height: 130%;
-
-        @include mobile {
-            padding: 0 8px;
-        }
     }
 
     &__img {
