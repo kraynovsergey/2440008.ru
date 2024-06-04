@@ -65,7 +65,9 @@
         }
 
         & .social {
-            background: #38A6EF !important;
+            @include tablet-small-from {
+                background: #38A6EF !important;
+            }
         }
     }
 
@@ -201,24 +203,29 @@
         }
 
         &-list {
-            background: $color_white;
-            border-radius: 10px;
-            padding: 30px 60px 30px 30px;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 15px;
 
+            @include desktop-small-from {
+                background: $color_white;
+                border-radius: 10px;
+                padding: 30px 60px 30px 30px;
+            }
+
             &::before {
-                content: '';
-                width: 0;
-                height: 0;
-                border-left: 10px solid transparent;
-                border-right: 10px solid transparent;
-                border-bottom: 16px solid $color_white;
-                position: absolute;
-                top: -16px;
+                @include desktop-small-from {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 16px solid $color_white;
+                    position: absolute;
+                    top: -14px;
+                }
             }
         }
 
@@ -226,7 +233,13 @@
             color: $color_dark_blue;
             
             &:hover {
-                color: $color_light_blue;
+                @include hover {
+                    color: $color_light_blue;
+                }
+            }
+
+            @include desktop-small {
+                color: $color_border;
             }
         }
 

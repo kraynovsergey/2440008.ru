@@ -30,9 +30,12 @@
         }
 
         @include desktop-small {
-            align-items: center;
             width: 100%;
-            text-align: center;
+
+            &:not(._left) {
+                align-items: center;
+                text-align: center;
+            }
         }
     }
 
@@ -100,7 +103,7 @@
         line-height: 130%;
 
         @media (max-width: 1600px) {
-            padding-bottom: 40px;
+            padding-bottom: 60px;
         }
 
         @include desktop-small {
@@ -122,6 +125,10 @@
         width: 100%;
         max-width: 600px;
         line-height: 130%;
+
+        @include mobile {
+            padding: 0 8px;
+        }
     }
 
     &__img {
@@ -151,8 +158,8 @@
         z-index: 1;
         color: #1E379A;
 
-        @include mobile {
-            width: 60%;
+        @include desktop-small {
+            display: none;
         }
     }
 

@@ -46,6 +46,14 @@
         gap: clamp-calc(10px, 15px);
         white-space: nowrap;
 
+        &:hover {
+            @include hover {
+                background: $color_white !important;
+                border-color: $color_white;
+                color: $color_dark_blue !important;
+            }
+        }
+
         &-icon {
             height: 55%;
             width: auto;

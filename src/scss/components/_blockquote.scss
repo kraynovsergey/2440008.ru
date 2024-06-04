@@ -5,17 +5,17 @@
     overflow: hidden;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr .5fr;
-    gap: clamp-calc(30px, 60px);
+    grid-template-columns: 1fr .6fr;
+    gap: clamp-calc(20px, 60px);
 
-    @include tablet-small {
+    @include desktop-small {
         grid-template-columns: 1fr;
     }
 
     &__text {
         color: #30446a;
         margin: 0;
-        font-size: clamp-calc(20px, 28px);
+        font-size: clamp-calc(18px, 26px);
         line-height: 130%;
     }
 
@@ -25,7 +25,7 @@
         align-items: center;
         gap: clamp-calc(15px, 35px);
 
-        @include tablet-small {
+        @include desktop-small {
             grid-template-columns: 100px 1fr;
         }
     }
@@ -46,6 +46,6 @@
 
     &__title,
     &__position {
-        font-size: clamp-calc(20px, 28px);
+        font-size: clamp-calc(18px, 24px);
     }
 }

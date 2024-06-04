@@ -3,6 +3,14 @@
     background: $color_white;
     overflow: hidden;
 
+    &._active {
+        & .vacancy__btn-icon {
+            & svg {
+                transform: rotate(0);
+            }
+        }
+    }
+
     &__btn {
         padding: clamp-calc(20px, 40px) clamp-calc(25px, 50px);
         display: flex;

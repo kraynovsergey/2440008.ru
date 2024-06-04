@@ -12,12 +12,12 @@ mixin picture_no_lazy(classname, img, format, width, height, alt, aos)
         source(type="image/webp" srcset="@img/"+img+".webp 1x, @img/"+img+"@2x.webp 2x")
         img(srcset="@img/"+img+"."+format+" 1x, @img/"+img+"@2x."+format+" 2x" alt=alt width=width height=height)
 
-mixin category(title, text, img)
+mixin category(title, text)
     article.category
         h3.category__title.heading
             a.link._full(href="#")=title
         p.category__text=text
-        img.category__img.lazy(data-src="@img/"+img alt=title width="268" height="200")
+        img.category__img.lazy(data-src="@img/category.svg" alt=title width="268" height="200")
 
 mixin advantage(title, text)
     article.advantage

@@ -14,6 +14,10 @@
     &:hover {
         @include hover {
             transform: translateY(-10px);
+
+            & .category__img {
+                transform: scale(1.15);
+            }
         }
     }
 
@@ -39,5 +43,6 @@
         width: auto;
         max-width: 100%;
         height: clamp-calc(140px, 200px);
+        transition: $transition;
     }
 }
