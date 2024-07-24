@@ -15,7 +15,7 @@
         @include hover {
             transform: translateY(-10px);
 
-            & .category__img {
+            & .category__picture img {
                 transform: scale(1.15);
             }
         }
@@ -40,10 +40,16 @@
         margin-bottom: 20px;
     }
 
-    &__img {
-        width: auto;
-        max-width: 100%;
-        height: clamp-calc(140px, 200px);
-        transition: $transition;
+    &__picture {
+        display: flex;
+
+        & img {
+            width: auto;
+            max-width: 100%;
+            height: clamp-calc(140px, 200px);
+            transition: $transition;
+            object-fit: contain;
+            object-position: bottom;
+        }
     }
 }
