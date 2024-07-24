@@ -5,12 +5,13 @@
     overflow: hidden;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr .6fr;
+    //grid-template-columns: 1fr .6fr;
+    grid-template-columns: 1fr;
     gap: clamp-calc(20px, 60px);
 
-    @include desktop-small {
-        grid-template-columns: 1fr;
-    }
+    //@include desktop-small {
+        //grid-template-columns: 1fr;
+    //}
 
     &__text {
         color: #30446a;

@@ -4,6 +4,9 @@ package-lock.json
 .vscode
 robots.txt
 /dist
+/local
+/index.php
+/about
 
 # General
 .DS_Store
